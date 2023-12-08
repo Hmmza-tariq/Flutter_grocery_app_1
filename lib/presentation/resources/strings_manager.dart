@@ -25,6 +25,15 @@ class AppStrings {
   static const String skip = "Skip";
   static const String show = "Show";
   static const String hide = "Hide";
+  static const String address = "Address";
+  static const String firstName = "First Name";
+  static const String lastName = "Last Name";
+  static const String phoneNumber = "Phone Number";
+  static const String enterAddress = "Enter your Address";
+  static const String enterFirstName = "Enter your First Name";
+  static const String enterLastName = "Enter your Last Name";
+  static const String enterPhoneNumber =
+      "Enter your Phone Number as 03xxxxxxxxx";
   static const String completeProfile = "Complete Your Profile";
   static const String completeInfo = "Please complete your information";
   static const String kContinue = "Continue";
@@ -41,6 +50,8 @@ class AppStrings {
   static const String kValidPhoneNumberError =
       "Please Enter a valid phone number";
   static const String kAddressNullError = "Please Enter your address";
+  static const String kEmailAlreadyExits =
+      "The email is already existed please try with another one";
   static const String google = "Google";
   static const String facebook = "Facebook";
   static const String twitter = "Twitter";

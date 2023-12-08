@@ -6,14 +6,14 @@ class DefaultButton extends StatelessWidget {
   final String? text;
   final VoidCallback? onPressed;
   final Color? backgroundColor;
-  final Color? forgroundColor;
+  final Color? foregroundColor;
   final double width, height;
   const DefaultButton(
       {Key? key,
       this.text,
       this.onPressed,
       this.backgroundColor = ColorManager.white,
-      this.forgroundColor = ColorManager.primaryColor,
+      this.foregroundColor = ColorManager.primaryColor,
       this.width = 300,
       this.height = 60})
       : super(key: key);
@@ -36,7 +36,7 @@ class DefaultButton extends StatelessWidget {
             text!,
             style: TextStyle(
               fontSize: SizeConfig.getProportionateScreenWidth(16),
-              color: forgroundColor,
+              color: foregroundColor,
             ),
           ),
         ));

@@ -62,9 +62,9 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
             FormError(errors: errors),
             SizedBox(height: SizeConfig.getProportionateScreenHeight(40)),
             DefaultButton(
-              text: "continue",
+              text: AppStrings.kContinue,
               backgroundColor: ColorManager.primaryColor,
-              forgroundColor: Colors.white,
+              foregroundColor: ColorManager.white,
               onPressed: () async {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState!.save();
@@ -73,10 +73,10 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
                         email: widget.userData.email);
 
                     if (result) {
-                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                        content: Text(
-                            "The email is already existed please try with another one"),
-                        backgroundColor: Colors.black38,
+                      // ignore: use_build_context_synchronously
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content: const Text(AppStrings.kEmailAlreadyExits),
+                        backgroundColor: ColorManager.grey2,
                       ));
                     } else {
                       User user = User(
@@ -87,6 +87,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
                           email: widget.userData.email,
                           password: widget.userData.password);
                       await _sqliteDbHelper.insertUser(user);
+                      // ignore: use_build_context_synchronously
                       Navigator.push(
                           context,
                           CustomScaleTransition(
@@ -119,8 +120,8 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
         return null;
       },
       decoration: const InputDecoration(
-        labelText: "Address",
-        hintText: "Enter your address",
+        labelText: AppStrings.address,
+        hintText: AppStrings.enterAddress,
         floatingLabelBehavior: FloatingLabelBehavior.auto,
         suffixIcon: CustomSuffixIcon(svgIconPath: ImageAssets.location),
       ),
@@ -149,8 +150,8 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
         return null;
       },
       decoration: const InputDecoration(
-        labelText: "Phone Number",
-        hintText: " 03xxxxxxxxx",
+        labelText: AppStrings.phoneNumber,
+        hintText: AppStrings.enterPhoneNumber,
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -178,8 +179,8 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
         return null;
       },
       decoration: const InputDecoration(
-        labelText: "First Name",
-        hintText: "Enter your first name",
+        labelText: AppStrings.firstName,
+        hintText: AppStrings.enterFirstName,
         suffixIcon: CustomSuffixIcon(svgIconPath: ImageAssets.user),
       ),
     );
@@ -204,9 +205,9 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
         return null;
       },
       decoration: const InputDecoration(
-        labelText: "Last Name",
-        hintText: "Enter your last name",
-        suffixIcon: CustomSuffixIcon(svgIconPath: "assets/icons/User.svg"),
+        labelText: AppStrings.lastName,
+        hintText: AppStrings.enterLastName,
+        suffixIcon: CustomSuffixIcon(svgIconPath: ImageAssets.user),
       ),
     );
   }
