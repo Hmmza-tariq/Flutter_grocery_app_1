@@ -1,6 +1,6 @@
 import 'package:abc/presentation/resources/color_manager.dart';
 import 'package:abc/presentation/resources/strings_manager.dart';
-import 'package:abc/presentation/sign_in/components/sign_in_form.dart';
+import 'package:abc/presentation/sign_up/components/sign_up_form.dart';
 import 'package:flutter/material.dart';
 import 'component/complete_profile_body.dart';
 
@@ -13,6 +13,7 @@ class CompleteProfileScreen extends StatelessWidget {
     final userData = ModalRoute.of(context)!.settings.arguments as ScreenArgs;
 
     return Scaffold(
+      backgroundColor: ColorManager.white,
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: ColorManager.primaryColor,

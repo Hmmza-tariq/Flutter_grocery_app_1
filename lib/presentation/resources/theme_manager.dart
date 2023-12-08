@@ -5,6 +5,18 @@ import 'package:abc/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
 
 ThemeData getApplicationTheme() {
+  Map<int, Color> colorSwatch = {
+    50: const Color.fromRGBO(0, 128, 0, .1),
+    100: const Color.fromRGBO(0, 128, 0, .2),
+    200: const Color.fromRGBO(0, 128, 0, .9),
+    300: const Color.fromRGBO(0, 128, 0, .4),
+    400: const Color.fromRGBO(0, 128, 0, .5),
+    500: const Color.fromRGBO(0, 128, 0, .6),
+    600: const Color.fromRGBO(0, 128, 0, .7),
+    700: const Color.fromRGBO(0, 128, 0, .8),
+    800: const Color.fromRGBO(0, 128, 0, .9),
+    900: const Color.fromRGBO(0, 128, 0, 1),
+  };
   return ThemeData(
       useMaterial3: true,
       primaryColor: ColorManager.primaryColor,
@@ -12,7 +24,9 @@ ThemeData getApplicationTheme() {
       primaryColorDark: ColorManager.secondaryColor,
       disabledColor: ColorManager.grey1,
       splashColor: ColorManager.lightPrimaryColor,
-      colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.green),
+      colorScheme: ColorScheme.fromSwatch(
+        primarySwatch: MaterialColor(0xFF006400, colorSwatch),
+      ),
 
       //Card Theme
       cardTheme: CardTheme(

@@ -4,7 +4,7 @@ import 'package:abc/presentation/resources/color_manager.dart';
 import 'package:abc/presentation/resources/strings_manager.dart';
 import 'package:abc/presentation/resources/styles_manager.dart';
 import 'package:abc/presentation/resources/values_manager.dart';
-import 'package:abc/presentation/sing_up/sign_up_screen.dart';
+import 'package:abc/presentation/sign_up/sign_up_screen.dart';
 import 'package:abc/presentation/widgets/custom_button.dart';
 import 'package:abc/presentation/widgets/custom_page_transition.dart';
 import 'package:abc/presentation/widgets/social_card.dart';

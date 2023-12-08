@@ -19,6 +19,9 @@ class AppStrings {
   static const String createAccountSub =
       "Please enter your details or sign up\n with your social media account";
   static const String welcome = "Welcome\nBack";
+  static const String otpVerification = "OTP Verification";
+  static const String otpVerificationSub =
+      "We sent your code to +92 3** *******";
   static const String skip = "Skip";
   static const String show = "Show";
   static const String hide = "Hide";

@@ -4,7 +4,7 @@ import 'package:abc/presentation/otp_screen/otp_screen.dart';
 import 'package:abc/presentation/resources/assets_manager.dart';
 import 'package:abc/presentation/resources/color_manager.dart';
 import 'package:abc/presentation/resources/strings_manager.dart';
-import 'package:abc/presentation/sign_in/components/sign_in_form.dart';
+import 'package:abc/presentation/sign_up/components/sign_up_form.dart';
 import 'package:abc/presentation/widgets/custom_page_transition.dart';
 import 'package:abc/presentation/widgets/custom_suffix_icon.dart';
 import 'package:abc/presentation/widgets/default_button.dart';
@@ -18,6 +18,7 @@ class CompleteProfileForm extends StatefulWidget {
       : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _CompleteProfileFormState createState() => _CompleteProfileFormState();
 }
 
@@ -149,7 +150,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
       },
       decoration: const InputDecoration(
         labelText: "Phone Number",
-        hintText: "Enter your phone number",
+        hintText: " 03xxxxxxxxx",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,

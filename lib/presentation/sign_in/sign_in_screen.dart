@@ -1,3 +1,4 @@
+import 'package:abc/presentation/resources/color_manager.dart';
 import 'package:flutter/material.dart';
 
 import 'components/sign_in_body.dart';
@@ -8,6 +9,9 @@ class SignInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: SignInBody());
+    return const Scaffold(
+      body: SignInBody(),
+      backgroundColor: ColorManager.white,
+    );
   }
 }

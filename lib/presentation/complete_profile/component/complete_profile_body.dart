@@ -1,5 +1,5 @@
 import 'package:abc/presentation/resources/strings_manager.dart';
-import 'package:abc/presentation/sign_in/components/sign_in_form.dart';
+import 'package:abc/presentation/sign_up/components/sign_up_form.dart';
 import 'package:abc/utilities/size_config.dart';
 import 'package:flutter/material.dart';
 

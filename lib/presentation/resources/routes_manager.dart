@@ -2,7 +2,7 @@ import 'package:abc/presentation/complete_profile/complete_profile.dart';
 import 'package:abc/presentation/forget_password/forgot_password_screen.dart';
 import 'package:abc/presentation/otp_screen/otp_screen.dart';
 import 'package:abc/presentation/sign_in/sign_in_screen.dart';
-import 'package:abc/presentation/sing_up/sign_up_screen.dart';
+import 'package:abc/presentation/sign_up/sign_up_screen.dart';
 import 'package:abc/presentation/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 

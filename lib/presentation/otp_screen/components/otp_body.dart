@@ -1,3 +1,4 @@
+import 'package:abc/presentation/resources/strings_manager.dart';
 import 'package:abc/presentation/widgets/horizontal_timer.dart';
 import 'package:flutter/material.dart';
 
@@ -16,14 +17,14 @@ class OTPBody extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.06,
             ),
             Text(
-              "OTP Verification",
+              AppStrings.otpVerification,
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: MediaQuery.of(context).size.width * 0.07,
                   color: Colors.black,
                   letterSpacing: 2),
             ),
-            const Text("We sent your code to +92 *** *******"),
+            const Text(AppStrings.otpVerificationSub),
             const HorizontalTimer(),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.15,

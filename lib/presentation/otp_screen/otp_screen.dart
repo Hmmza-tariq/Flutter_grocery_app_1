@@ -1,4 +1,5 @@
 import 'package:abc/presentation/resources/color_manager.dart';
+import 'package:abc/presentation/resources/strings_manager.dart';
 import 'package:abc/utilities/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class OTPScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: ColorManager.primaryColor,
-        title: const Text("OTP Verification"),
+        title: const Text(AppStrings.otpVerification),
       ),
       body: const OTPBody(),
     );
