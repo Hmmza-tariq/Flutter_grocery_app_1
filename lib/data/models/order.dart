@@ -1,7 +1,5 @@
-
 class Order {
   late int id;
-
 
   Order({required this.id});
 
@@ -15,10 +13,9 @@ class Order {
     id = map['id'];
   }
   Order toEntity() => Order(id: id);
-
 }
 
-List<Order> demoOrders = [
+List<Order> demoOrder = [
   Order(id: -1),
   Order(id: -2),
   Order(id: -3),

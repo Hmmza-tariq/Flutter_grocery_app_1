@@ -1,6 +1,8 @@
 import 'package:abc/presentation/forget_password/forgot_password_screen.dart';
+import 'package:abc/presentation/home/home_screen.dart';
 import 'package:abc/presentation/resources/assets_manager.dart';
 import 'package:abc/presentation/resources/color_manager.dart';
+import 'package:abc/presentation/resources/font_manager.dart';
 import 'package:abc/presentation/resources/strings_manager.dart';
 import 'package:abc/presentation/resources/styles_manager.dart';
 import 'package:abc/presentation/resources/values_manager.dart';
@@ -51,6 +53,7 @@ class _SignInFormState extends State<SignInForm> {
           Form(
             key: _formKey,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.02,
@@ -102,27 +105,6 @@ class _SignInFormState extends State<SignInForm> {
                     SocialCard(
                       svgIconPath: ImageAssets.twitter,
                     ),
-                    // CustomButton(
-                    //   title: AppStrings.google,
-                    //   backgroundColor: ColorManager.transparent,
-                    //   foregroundColor: ColorManager.primaryColor,
-                    //   width: MediaQuery.of(context).size.width * 0.25,
-                    //   onPressed: () async {},
-                    // ),
-                    // CustomButton(
-                    //   title: AppStrings.facebook,
-                    //   backgroundColor: ColorManager.transparent,
-                    //   foregroundColor: ColorManager.primaryColor,
-                    //   width: MediaQuery.of(context).size.width * 0.25,
-                    //   onPressed: () async {},
-                    // ),
-                    // CustomButton(
-                    //   title: AppStrings.twitter,
-                    //   backgroundColor: ColorManager.transparent,
-                    //   foregroundColor: ColorManager.primaryColor,
-                    //   width: MediaQuery.of(context).size.width * 0.25,
-                    //   onPressed: () async {},
-                    // ),
                   ],
                 ),
                 SizedBox(
@@ -136,11 +118,11 @@ class _SignInFormState extends State<SignInForm> {
                   onPressed: () async {
                     //
                     //
-                    // Navigator.push(
-                    //     context,
-                    //     CustomScaleTransition(
-                    //         nextPageUrl: HomeScreen.routeName,
-                    //         nextPage: const HomeScreen()));
+                    Navigator.push(
+                        context,
+                        CustomScaleTransition(
+                            nextPageUrl: HomeScreen.routeName,
+                            nextPage: const HomeScreen()));
                     //
                     //
 
@@ -179,6 +161,18 @@ class _SignInFormState extends State<SignInForm> {
                       style: textStyle.copyWith(fontWeight: FontWeight.bold)),
                 ),
               ],
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: Padding(
+              padding: const EdgeInsets.only(top: AppPadding.p60),
+              child: Text(
+                AppStrings.skip,
+                style: textStyle.copyWith(
+                    fontSize: FontSize.s18,
+                    decoration: TextDecoration.underline),
+              ),
             ),
           )
         ],

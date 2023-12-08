@@ -9,6 +9,7 @@ class AppStrings {
   static const String enterPassword = "Enter your password";
   static const String login = "Login";
   static const String signIn = "Sign In";
+  static const String signOut = "Sign out";
   static const String signUp = "Sign Up";
   static const String signUpTitle = "Sign With Us";
   static const String forgetPassword = "Forgot Password?";
@@ -56,6 +57,11 @@ class AppStrings {
   static const String facebook = "Facebook";
   static const String twitter = "Twitter";
   static const String or = "OR";
+  static const String noInternet = "No Internet Connection";
+  static const String noInternetSub =
+      "Your internet connection is currently not available please check it or try again.";
+  static const String tryAgain = "Try Again";
+  static const String location = "My Location";
 }
 
 final RegExp emailValidatorRegExp =
