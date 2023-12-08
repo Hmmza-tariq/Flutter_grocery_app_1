@@ -12,12 +12,15 @@ class SocialCard extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height * 0.1,
       width: MediaQuery.of(context).size.width * 0.1,
-      padding: const EdgeInsets.all(AppPadding.p12),
+      padding: const EdgeInsets.all(AppPadding.p8),
       decoration: const BoxDecoration(
         shape: BoxShape.circle,
         color: ColorManager.socialCardBgColor,
       ),
-      child: SvgPicture.asset(svgIconPath),
+      child: Padding(
+        padding: const EdgeInsets.all(AppPadding.p4),
+        child: SvgPicture.asset(svgIconPath),
+      ),
     );
   }
 }

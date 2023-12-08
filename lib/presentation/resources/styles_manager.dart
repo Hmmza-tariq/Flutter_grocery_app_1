@@ -91,8 +91,8 @@ const priceTextStyle = TextStyle(
 );
 
 const TextStyle splashHeadingTextStyle = TextStyle(
-  fontSize: FontSize.s55,
-  fontWeight: FontWeight.w800,
+  fontSize: FontSize.s65,
+  fontWeight: FontWeight.w900,
   color: Colors.white,
 );
 const TextStyle kBannerTextStyle = TextStyle(

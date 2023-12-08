@@ -38,6 +38,10 @@ class AppStrings {
   static const String kValidPhoneNumberError =
       "Please Enter a valid phone number";
   static const String kAddressNullError = "Please Enter your address";
+  static const String google = "Google";
+  static const String facebook = "Facebook";
+  static const String twitter = "Twitter";
+  static const String or = "OR";
 }
 
 final RegExp emailValidatorRegExp =

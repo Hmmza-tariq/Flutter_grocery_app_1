@@ -6,13 +6,13 @@ import 'package:flutter/material.dart';
 
 ThemeData getApplicationTheme() {
   return ThemeData(
+      useMaterial3: true,
       primaryColor: ColorManager.primaryColor,
       primaryColorLight: ColorManager.lightPrimaryColor,
       primaryColorDark: ColorManager.secondaryColor,
       disabledColor: ColorManager.grey1,
       splashColor: ColorManager.lightPrimaryColor,
-      colorScheme:
-          ColorScheme.fromSwatch().copyWith(secondary: ColorManager.grey),
+      colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.green),
 
       //Card Theme
       cardTheme: CardTheme(

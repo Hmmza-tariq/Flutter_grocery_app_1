@@ -1,3 +1,4 @@
+import 'package:abc/presentation/resources/styles_manager.dart';
 import 'package:abc/presentation/sign_in/sign_in_screen.dart';
 import 'package:abc/presentation/resources/assets_manager.dart';
 import 'package:abc/presentation/resources/color_manager.dart';
@@ -17,7 +18,8 @@ class SplashScreenBody extends StatefulWidget {
 class _SplashScreenBodyState extends State<SplashScreenBody>
     with TickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
-      duration: const Duration(seconds: DurationConstant.d2000), vsync: this)
+      duration: const Duration(milliseconds: DurationConstant.d2000),
+      vsync: this)
     ..repeat(reverse: true);
   late final Animation<double> _animation =
       CurvedAnimation(parent: _controller, curve: Curves.ease);
@@ -34,7 +36,7 @@ class _SplashScreenBodyState extends State<SplashScreenBody>
             Flexible(
               flex: 3,
               child: Text(AppStrings.appName.toUpperCase(),
-                  style: Theme.of(context).textTheme.headlineLarge),
+                  style: splashHeadingTextStyle),
             ),
             Flexible(
               flex: 5,

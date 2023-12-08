@@ -1,4 +1,5 @@
 import 'package:abc/presentation/forget_password/forgot_password_screen.dart';
+import 'package:abc/presentation/resources/assets_manager.dart';
 import 'package:abc/presentation/resources/color_manager.dart';
 import 'package:abc/presentation/resources/strings_manager.dart';
 import 'package:abc/presentation/resources/styles_manager.dart';
@@ -6,16 +7,8 @@ import 'package:abc/presentation/resources/values_manager.dart';
 import 'package:abc/presentation/sing_up/sign_up_screen.dart';
 import 'package:abc/presentation/widgets/custom_button.dart';
 import 'package:abc/presentation/widgets/custom_page_transition.dart';
+import 'package:abc/presentation/widgets/social_card.dart';
 import 'package:flutter/material.dart';
-// import 'package:store/Utilities/keyboard_util.dart';
-// import 'package:store/Utilities/sqfilte_helper.dart';
-// import 'package:store/constants/colors.dart';
-// import 'package:store/constants/form_messages.dart';
-// import 'package:store/presentation/screens/forgot_password/forgot_password_screen.dart';
-// import 'package:store/presentation/screens/home/home_screen.dart';
-// import 'package:store/presentation/screens/sign_up/sign_up_screen.dart';
-// import 'package:store/presentation/widgets/custom_button.dart';
-// import 'package:store/presentation/widgets/custom_page_transition.dart';
 
 class SignInForm extends StatefulWidget {
   const SignInForm({Key? key}) : super(key: key);
@@ -85,6 +78,52 @@ class _SignInFormState extends State<SignInForm> {
                           fontWeight: FontWeight.bold),
                     ),
                   ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.015,
+                ),
+                Text(
+                  AppStrings.or,
+                  style: textStyle.copyWith(
+                      color: ColorManager.grey2, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.01,
+                ),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SocialCard(
+                      svgIconPath: ImageAssets.google,
+                    ),
+                    SocialCard(
+                      svgIconPath: ImageAssets.facebook,
+                    ),
+                    SocialCard(
+                      svgIconPath: ImageAssets.twitter,
+                    ),
+                    // CustomButton(
+                    //   title: AppStrings.google,
+                    //   backgroundColor: ColorManager.transparent,
+                    //   foregroundColor: ColorManager.primaryColor,
+                    //   width: MediaQuery.of(context).size.width * 0.25,
+                    //   onPressed: () async {},
+                    // ),
+                    // CustomButton(
+                    //   title: AppStrings.facebook,
+                    //   backgroundColor: ColorManager.transparent,
+                    //   foregroundColor: ColorManager.primaryColor,
+                    //   width: MediaQuery.of(context).size.width * 0.25,
+                    //   onPressed: () async {},
+                    // ),
+                    // CustomButton(
+                    //   title: AppStrings.twitter,
+                    //   backgroundColor: ColorManager.transparent,
+                    //   foregroundColor: ColorManager.primaryColor,
+                    //   width: MediaQuery.of(context).size.width * 0.25,
+                    //   onPressed: () async {},
+                    // ),
+                  ],
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.03,
