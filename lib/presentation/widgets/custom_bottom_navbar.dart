@@ -7,9 +7,9 @@ import 'package:flutter/material.dart';
 
 import 'custom_page_transition.dart';
 
-class CustomButtomNavBar extends StatelessWidget {
+class CustomButtonNavBar extends StatelessWidget {
   final MenuState selectedMenu;
-  const CustomButtomNavBar({Key? key, required this.selectedMenu})
+  const CustomButtonNavBar({Key? key, required this.selectedMenu})
       : super(key: key);
 
   @override

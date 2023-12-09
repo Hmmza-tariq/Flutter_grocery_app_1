@@ -1,12 +1,10 @@
-import 'package:flutter/material.dart';
-
 class Product {
   late final int id;
   late final String title;
   late final Map<String, String> description;
   late final String image;
   late final List<String> images;
-  late final List<Map<String, dynamic>> colors;
+  late final List<int> quantity;
   late final double rating;
   late final double price;
   late final String category;
@@ -18,7 +16,7 @@ class Product {
     required this.title,
     required this.description,
     required this.images,
-    required this.colors,
+    required this.quantity,
     this.rating = 0.0,
     this.isFavourite = false,
     this.isPopular = false,
@@ -35,7 +33,7 @@ class Product {
       'image': image,
       'images': images,
       'category': category,
-      'colors': colors,
+      'quantity': quantity,
       'rating': rating,
       'price': price,
       'isFavourite': isFavourite,
@@ -50,7 +48,7 @@ class Product {
     image = map['image'];
     category = map['category'];
     images = map['images'];
-    colors = map['colors'];
+    quantity = map['quantity'];
     rating = map['rating'];
     price = map['price'];
     isFavourite = map['isFavourite'];
@@ -63,31 +61,27 @@ class Product {
         image: image,
         images: images,
         category: category,
-        colors: colors,
+        quantity: quantity,
         rating: rating,
         price: price,
         isFavourite: isFavourite,
         isPopular: isPopular,
       );
 }
-
 // Demo data
+
 List<Product> demoProducts = [
   Product(
     id: 1,
     image: "assets/images/fruits.png",
     images: [
-      "assets/images/vegetables.png",
-      "assets/images/diary.png",
-      "assets/images/meat.png",
+      "assets/images/fruits.png",
+      "assets/images/fruits.png",
+      "assets/images/fruits.png",
     ],
     category: "Clock , Wearable",
-    colors: [
-      {"colorName": "Red Rose", "color": const Color(0xFFF6625E)},
-      {"colorName": "Purple", "color": const Color(0xFF836DB8)},
-      {"colorName": "Gold", "color": const Color(0xFFDECB9C)},
-    ],
-    title: "fruits",
+    quantity: quantity,
+    title: "Apple",
     price: 64.99,
     description: {"headline": "Fresh fruits", "description": description},
     rating: 4.8,
@@ -98,17 +92,12 @@ List<Product> demoProducts = [
     id: 2,
     image: "assets/images/vegetables.png",
     images: [
-      "assets/images/p2_1.png",
-      "assets/images/p2_2.jpg",
+      "assets/images/vegetables.png",
+      "assets/images/vegetables.png",
     ],
     category: "vegetables",
-    colors: [
-      {"colorName": "Red Rose", "color": const Color(0xFFF6625E)},
-      {"colorName": "Purple", "color": const Color(0xFF836DB8)},
-      {"colorName": "Gold", "color": const Color(0xFFDECB9C)},
-      {"colorName": "Red", "color": const Color(0xE7FF0D29)}
-    ],
-    title: "vegetables",
+    quantity: quantity,
+    title: "Broccoli",
     price: 50.5,
     description: {"headline": "Green Vegetables", "description": description},
     rating: 4.1,
@@ -116,65 +105,30 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 3,
-    image: "assets/images/diary.png",
+    image: "assets/images/salad.png",
     images: [
-      "assets/images/p3_1.png",
+      "assets/images/salad.png",
     ],
-    category: "diary",
-    colors: [
-      {"colorName": "Red Rose", "color": const Color(0xFFF6625E)},
-      {"colorName": "Purple", "color": const Color(0xFF836DB8)},
-      {"colorName": "Gold", "color": const Color(0xFFDECB9C)},
-      {"colorName": "Red", "color": const Color(0xE7FF0D29)}
-    ],
-    title: "diary",
+    category: "salad",
+    quantity: quantity,
+    title: "Salad",
     price: 20.20,
-    description: {"headline": "Diary Products", "description": description},
+    description: {"headline": "salad Products", "description": description},
     rating: 4.1,
     isFavourite: false,
   ),
   Product(
     id: 4,
-    image: "assets/images/p4.png",
+    image: "assets/images/juice.png",
     images: [
-      "assets/images/p4.png",
-      "assets/images/p4.png",
-      "assets/images/p4.png",
+      "assets/images/juice.png",
+      "assets/images/juice.png",
     ],
-    category: "Clocks",
-    colors: [
-      {"colorName": "Red Rose", "color": const Color(0xFFF6625E)},
-      {"colorName": "Purple", "color": const Color(0xFF836DB8)},
-      {"colorName": "Gold", "color": const Color(0xFFDECB9C)},
-      {"colorName": "Red", "color": const Color(0xE7FF0D29)}
-    ],
-    title: "Apple Watch",
-    price: 20.20,
-    description: {
-      "headline": "Get Apple TV+ free for a year",
-      "description": description
-    },
-    rating: 4.1,
-    isFavourite: false,
-  ),
-  Product(
-    id: 5,
-    image: "assets/images/meat.png",
-    images: [
-      "assets/images/p5_1.png",
-      "assets/images/p5_1.png",
-    ],
-    category: "Computers",
-    colors: [
-      {"colorName": "Red Rose", "color": const Color(0xFFF6625E)},
-      {"colorName": "Purple", "color": const Color(0xFF836DB8)},
-      {"colorName": "Gold", "color": const Color(0xFFDECB9C)},
-      {"colorName": "Red", "color": const Color(0xE7FF0D29)},
-      {"colorName": "Yellow", "color": const Color(0xE7FFD70D)}
-    ],
-    title: "meat",
+    category: "juice",
+    quantity: quantity,
+    title: "Juice",
     price: 36.55,
-    description: {"headline": "meat", "description": description},
+    description: {"headline": "juice", "description": description},
     rating: 4.4,
     isFavourite: true,
     isPopular: true,
@@ -182,4 +136,6 @@ List<Product> demoProducts = [
 ];
 
 const String description =
-    "Available when you purchase any new iPhone, iPad, iPod Touch, Mac or Apple TV, £4.99/month after free trial …";
+    "fresh fruits and vegetables are the best source of vitamins and minerals. People who eat a healthy amount of fruits and vegetables each day have a reduced risk of chronic diseases. Fruits and vegetables contain essential nutrients for a healthy body. We are providing fresh fruits and vegetables to our customers.";
+
+List<int> quantity = [3, 4, 5];

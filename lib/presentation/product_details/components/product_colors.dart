@@ -1,18 +1,19 @@
+import 'package:abc/presentation/resources/color_manager.dart';
 import 'package:abc/presentation/resources/styles_manager.dart';
-import 'package:abc/presentation/widgets/circle.dart';
 import 'package:abc/utilities/size_config.dart';
 import 'package:flutter/material.dart';
 
-class ProductColorList extends StatefulWidget {
-  final List<Map<String, dynamic>> productColors;
-  const ProductColorList({Key? key, required this.productColors})
+class ProductQuantityList extends StatefulWidget {
+  final List<int> productQuantity;
+  const ProductQuantityList.productQuantityList(
+      {Key? key, required this.productQuantity})
       : super(key: key);
 
   @override
-  _ProductColorListState createState() => _ProductColorListState();
+  ProductQuantityListState createState() => ProductQuantityListState();
 }
 
-class _ProductColorListState extends State<ProductColorList> {
+class ProductQuantityListState extends State<ProductQuantityList> {
   int _selectedColor = 0;
   @override
   Widget build(BuildContext context) {
@@ -21,17 +22,11 @@ class _ProductColorListState extends State<ProductColorList> {
           horizontal: SizeConfig.getProportionateScreenWidth(20)),
       child: Column(
         children: [
-          const Align(
+          Align(
             alignment: Alignment.centerLeft,
-            child: Text(
-              "Colors",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 17,
-                fontFamily: "Raleway",
-                fontWeight: FontWeight.w700,
-              ),
-            ),
+            child: Text("Family Size",
+                style:
+                    kSearchFieldTextStyle.copyWith(color: ColorManager.black)),
           ),
           const SizedBox(
             height: 8,
@@ -41,11 +36,10 @@ class _ProductColorListState extends State<ProductColorList> {
             child: Row(
               children: [
                 ...List.generate(
-                    widget.productColors.length,
+                    widget.productQuantity.length,
                     (index) => productColorCard(
                           colorIndex: index,
-                          productColor: widget.productColors[index]["color"],
-                          colorName: widget.productColors[index]["colorName"],
+                          quantity: widget.productQuantity[index],
                           isSelected: _selectedColor == index,
                         ))
               ],
@@ -58,9 +52,8 @@ class _ProductColorListState extends State<ProductColorList> {
 
   GestureDetector productColorCard(
       {required int colorIndex,
-      required Color productColor,
       required bool isSelected,
-      required String colorName}) {
+      required int quantity}) {
     return GestureDetector(
       onTap: () {
         setState(() {
@@ -74,8 +67,8 @@ class _ProductColorListState extends State<ProductColorList> {
         width: SizeConfig.getProportionateScreenWidth(105),
         decoration: BoxDecoration(
             color: Colors.white,
-            border:
-                Border.all(color: isSelected ? productColor : Colors.black12),
+            border: Border.all(
+                color: isSelected ? ColorManager.primaryColor : Colors.black12),
             boxShadow: const [
               BoxShadow(
                 color: Color(0x0f000000),
@@ -84,25 +77,11 @@ class _ProductColorListState extends State<ProductColorList> {
               ),
             ],
             borderRadius: const BorderRadius.all(Radius.circular(10))),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Circle(
-              width: SizeConfig.getProportionateScreenWidth(20),
-              height: SizeConfig.getProportionateScreenHeight(20),
-              color: productColor,
-              borderColor: Colors.transparent,
-            ),
-            const SizedBox(
-              width: 8,
-            ),
-            Text(
-              colorName,
-              style: colorTextStyle,
-            ),
-          ],
+        child: Center(
+          child: Text(
+            '$quantity Persons',
+            style: colorTextStyle,
+          ),
         ),
       ),
     );

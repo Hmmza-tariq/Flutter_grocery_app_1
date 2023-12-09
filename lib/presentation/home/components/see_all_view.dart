@@ -8,13 +8,13 @@ Widget seeAllView(BuildContext context, String name) {
       children: [
         Text(
           name,
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
         InkWell(
           onTap: () {
             // Navigator.pushNamed(context, MyRoutes.vegetablesRoute);
           },
-          child: Text(
+          child: const Text(
             "See All",
             style: TextStyle(
                 fontSize: 14,

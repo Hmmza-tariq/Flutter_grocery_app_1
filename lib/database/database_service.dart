@@ -67,7 +67,9 @@ class SqliteDbHelper {
         return -1;
       }
     } catch (e) {
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
     }
 
     return 0;

@@ -1,5 +1,5 @@
 import 'package:abc/data/models/product.dart';
-import 'package:abc/presentation/resources/color_manager.dart';
+import 'package:abc/presentation/resources/font_manager.dart';
 import 'package:abc/presentation/resources/styles_manager.dart';
 import 'package:abc/utilities/size_config.dart';
 import 'package:flutter/material.dart';
@@ -8,10 +8,7 @@ import 'product_colors.dart';
 
 class ProductDescription extends StatelessWidget {
   final Product product;
-  final GestureTapCallback? onSeeMorePressed;
-  const ProductDescription(
-      {Key? key, required this.product, this.onSeeMorePressed})
-      : super(key: key);
+  const ProductDescription({Key? key, required this.product}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +30,8 @@ class ProductDescription extends StatelessWidget {
           ),
 
           // Product Colors
-          ProductColorList(productColors: product.colors),
+          ProductQuantityList.productQuantityList(
+              productQuantity: product.quantity),
 
           // Product Description
           Container(
@@ -64,45 +62,19 @@ class ProductDescription extends StatelessWidget {
                       style: productDescriptionStyle,
                     ),
                   ),
-                  // See more details button
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                        vertical: SizeConfig.getProportionateScreenWidth(10)),
-                    child: GestureDetector(
-                      onTap: () {},
-                      child: Row(
-                        children: [
-                          const Text(
-                            "Full Description",
-                            style: textStyle,
-                          ),
-                          const SizedBox(
-                            width: 3,
-                          ),
-                          Icon(
-                            Icons.arrow_forward_outlined,
-                            size: SizeConfig.getProportionateScreenWidth(20),
-                            color: ColorManager.primaryColor,
-                            semanticLabel: "See More Details",
-                          )
-                        ],
-                      ),
-                    ),
+                  SizedBox(
+                    height: SizeConfig.getProportionateScreenHeight(5),
                   ),
-                  // Total Price
                   Padding(
                     padding: const EdgeInsets.all(6.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text("Total",
-                            style: TextStyle(
-                              fontSize:
-                                  SizeConfig.getProportionateScreenWidth(14),
-                              color: Colors.black,
-                            )),
+                            style: kBannerTextStyle.copyWith(
+                                fontSize: FontSize.s18)),
                         Text(
-                          "\$${product.price}",
+                          "Rs ${product.price}",
                           style: priceTextStyle,
                         ),
                       ],

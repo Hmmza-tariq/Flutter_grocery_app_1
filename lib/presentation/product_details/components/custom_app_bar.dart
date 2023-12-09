@@ -1,4 +1,4 @@
-import 'package:abc/data/models/product.dart';
+import 'package:abc/Data/models/product.dart';
 import 'package:abc/utilities/size_config.dart';
 import 'package:flutter/material.dart';
 import 'custom_back_button.dart';

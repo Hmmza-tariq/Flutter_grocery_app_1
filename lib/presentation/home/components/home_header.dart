@@ -26,7 +26,7 @@ class HomeHeader extends StatelessWidget {
             width: SizeConfig.getProportionateScreenWidth(20),
           ),
 
-          SearchField(),
+          const SearchField(),
         ],
       ),
     );

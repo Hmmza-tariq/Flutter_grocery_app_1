@@ -105,8 +105,8 @@ class _HomeContentState extends State<HomeContent> {
               children: [
                 categoriesView(ImageAssets.fruits, "Fruits"),
                 categoriesView(ImageAssets.vegetables, "Vegetables"),
-                categoriesView(ImageAssets.diary, "Diary"),
-                categoriesView(ImageAssets.meat, "Meat")
+                categoriesView(ImageAssets.salad, "Szalad"),
+                categoriesView(ImageAssets.juice, "Juice")
               ],
             ),
             const SizedBox(
@@ -126,8 +126,8 @@ class _HomeContentState extends State<HomeContent> {
               height: 32,
             ),
             const SpecialProducts(),
-            Recipes(),
-            const CustomButtomNavBar(selectedMenu: MenuState.home),
+            const Recipes(),
+            const CustomButtonNavBar(selectedMenu: MenuState.home),
           ],
         ));
   }

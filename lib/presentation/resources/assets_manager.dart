@@ -8,8 +8,8 @@ class ImageAssets {
   static const String no_connection = "$IMAGE_PATH/no_connection.png";
   static const String fruits = "$IMAGE_PATH/fruits.png";
   static const String vegetables = "$IMAGE_PATH/vegetables.png";
-  static const String diary = "$IMAGE_PATH/diary.png";
-  static const String meat = "$IMAGE_PATH/meat.png";
+  static const String salad = "$IMAGE_PATH/salad.png";
+  static const String juice = "$IMAGE_PATH/juice.png";
   static const String recipe_1 = "$IMAGE_PATH/r2.jpeg";
   static const String recipe_2 = "$IMAGE_PATH/r2.jpeg";
   static const String recipe_3 = "$IMAGE_PATH/r2.jpeg";

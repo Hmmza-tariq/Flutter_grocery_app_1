@@ -10,6 +10,7 @@ import 'package:abc/presentation/widgets/custom_suffix_icon.dart';
 import 'package:abc/presentation/widgets/default_button.dart';
 import 'package:abc/presentation/widgets/form_errors.dart';
 import 'package:abc/utilities/size_config.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class CompleteProfileForm extends StatefulWidget {
@@ -94,7 +95,11 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
                               nextPageUrl: OTPScreen.routeName,
                               nextPage: const OTPScreen()));
                     }
-                  } on Exception {}
+                  } on Exception {
+                    if (kDebugMode) {
+                      print('error');
+                    }
+                  }
                 }
               },
             ),
@@ -152,7 +157,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
       decoration: const InputDecoration(
         labelText: AppStrings.phoneNumber,
         hintText: AppStrings.enterPhoneNumber,
-        // If  you are using latest version of flutter then lable text and hint text shown like this
+        // If  you are using latest version of flutter then label text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: CustomSuffixIcon(svgIconPath: ImageAssets.phone),

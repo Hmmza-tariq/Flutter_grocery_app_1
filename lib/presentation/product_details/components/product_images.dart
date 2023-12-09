@@ -9,10 +9,10 @@ class ProductImages extends StatefulWidget {
   const ProductImages({Key? key, required this.product}) : super(key: key);
 
   @override
-  _ProductImagesState createState() => _ProductImagesState();
+  ProductImagesState createState() => ProductImagesState();
 }
 
-class _ProductImagesState extends State<ProductImages> {
+class ProductImagesState extends State<ProductImages> {
   int _selectedImage = 0;
   late PageController _pageController;
   @override

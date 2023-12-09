@@ -45,7 +45,8 @@ class _SplashScreenBodyState extends State<SplashScreenBody>
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(AppPadding.p18),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: AppPadding.p18),
                       child: SizedBox(
                         height:
                             MediaQuery.of(context).size.height * AppSize.s0_5,

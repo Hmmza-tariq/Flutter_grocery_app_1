@@ -29,9 +29,10 @@ class _ProductCardState extends State<ProductCard> {
       child: SizedBox(
         width: SizeConfig.getProportionateScreenWidth(widget.width),
         child: GestureDetector(
-          onTap: () => Navigator.pushNamed(
-              context, ProductDetailsScreen.routeName,
-              arguments: widget.product),
+          onTap: () {
+            Navigator.pushNamed(context, ProductDetailsScreen.routeName,
+                arguments: widget.product);
+          },
           //Navigator.pushNamed(context, ProductDetailsScreen.routeName,arguments: ProductDetailsArgument(product: product))
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [

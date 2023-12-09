@@ -25,7 +25,7 @@ class DetailsScreenContent extends StatelessWidget {
               color: Colors.white,
               child: Column(
                 children: [
-                  ProductDescription(product: product, onSeeMorePressed: () {}),
+                  ProductDescription(product: product),
                   Padding(
                     padding: EdgeInsets.symmetric(
                         vertical: SizeConfig.getProportionateScreenHeight(8.0)),
