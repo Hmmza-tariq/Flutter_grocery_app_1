@@ -13,6 +13,14 @@ class ImageAssets {
   static const String recipe_1 = "$IMAGE_PATH/r2.jpeg";
   static const String recipe_2 = "$IMAGE_PATH/r2.jpeg";
   static const String recipe_3 = "$IMAGE_PATH/r2.jpeg";
+  static const String back = "$ICON_PATH/back_icon.png";
+  static const String remove = "$ICON_PATH/remove_icon.png";
+  static const String reviews = "$ICON_PATH/reviews.png";
+  static const String search = "$ICON_PATH/search_icon.png";
+  static const String add = "$ICON_PATH/add_icon.png";
+  static const String expiration = "$ICON_PATH/expiration.png";
+  static const String organic = "$ICON_PATH/organic.png";
+  static const String calories = "$ICON_PATH/calories.png";
   static const String google = "$ICON_PATH/google.svg";
   static const String facebook = "$ICON_PATH/facebook.svg";
   static const String twitter = "$ICON_PATH/twitter.svg";

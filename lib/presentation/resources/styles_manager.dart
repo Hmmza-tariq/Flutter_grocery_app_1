@@ -66,7 +66,7 @@ const drawerItemTextStyle = TextStyle(
 );
 const productTitleStyle = TextStyle(
   color: Colors.black,
-  fontSize: FontSize.s20,
+  fontSize: FontSize.s24,
   fontFamily: FontManager.fontFamily,
   fontWeight: FontWeight.w600,
 );
@@ -77,10 +77,11 @@ const colorTextStyle = TextStyle(
   fontFamily: FontManager.fontFamily,
   fontWeight: FontWeight.w700,
 );
-const productDescriptionStyle = TextStyle(
-  color: ColorManager.black,
+TextStyle productDescriptionStyle = TextStyle(
+  color: ColorManager.grey,
   fontSize: FontSize.s16,
   letterSpacing: 0.30,
+  fontWeight: FontWeight.w500,
   fontFamily: FontManager.fontFamily,
 );
 

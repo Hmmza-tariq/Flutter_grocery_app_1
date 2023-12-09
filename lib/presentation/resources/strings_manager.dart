@@ -62,6 +62,7 @@ class AppStrings {
       "Your internet connection is currently not available please check it or try again.";
   static const String tryAgain = "Try Again";
   static const String location = "My Location";
+  static const String addToCart = "Add to cart";
 }
 
 final RegExp emailValidatorRegExp =
