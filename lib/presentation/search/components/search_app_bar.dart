@@ -1,10 +1,9 @@
 import 'package:abc/presentation/resources/color_manager.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:abc/Utilities/size_config.dart';
-import 'package:abc/presentation/bloc/search/search_bloc.dart';
-import 'package:abc/presentation/bloc/search/search_event.dart';
+// import 'package:abc/presentation/bloc/search/search_bloc.dart';
+// import 'package:abc/presentation/bloc/search/search_event.dart';
 
 class SearchAppBar extends StatelessWidget {
   const SearchAppBar({Key? key, required this.queryTextController})
@@ -12,7 +11,7 @@ class SearchAppBar extends StatelessWidget {
   final TextEditingController queryTextController;
   @override
   Widget build(BuildContext context) {
-    final bloc = BlocProvider.of<SearchBloc>(context);
+    // final bloc = BlocProvider.of<SearchBloc>(context);
     return TextField(
       controller: queryTextController,
       textInputAction: TextInputAction.search,
@@ -63,10 +62,10 @@ class SearchAppBar extends StatelessWidget {
           ),
           prefixText: "  "),
       onChanged: (value) {
-        bloc.add(FetchDataEvent(queryString: value));
+        // bloc.add(FetchDataEvent(queryString: value));
       },
       onSubmitted: (value) {
-        bloc.add(FetchDataEvent(queryString: value));
+        // bloc.add(FetchDataEvent(queryString: value));
       },
     );
   }

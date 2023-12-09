@@ -6,7 +6,7 @@ Widget categoriesView(String imagePath, String catName) {
     child: Column(
       children: [
         CircleAvatar(
-          backgroundColor: Color(0xffF3F5F7),
+          backgroundColor: const Color(0xffF3F5F7),
           radius: 32,
           child: Padding(
             padding: const EdgeInsets.all(12.0),
@@ -16,12 +16,12 @@ Widget categoriesView(String imagePath, String catName) {
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 8,
         ),
         Text(
           catName,
-          style: TextStyle(
+          style: const TextStyle(
               fontSize: 14, fontWeight: FontWeight.w500, color: Colors.black),
         )
       ],

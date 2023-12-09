@@ -3,6 +3,7 @@ import 'package:abc/utilities/size_config.dart';
 import 'package:flutter/material.dart';
 import 'custom_back_button.dart';
 
+// ignore: must_be_immutable
 class CustomAppBar extends StatefulWidget {
   final int productId;
   late bool isProductFavourite;

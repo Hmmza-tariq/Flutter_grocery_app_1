@@ -1,13 +1,10 @@
-import 'dart:math';
-import 'package:abc/data/models/cart_item.dart';
 import 'package:abc/data/models/product.dart';
-import 'package:abc/presentation/bloc/cart/cart_bloc.dart';
-import 'package:abc/presentation/bloc/cart/cart_event.dart';
+// import 'package:abc/presentation/bloc/cart/cart_bloc.dart';
+// import 'package:abc/presentation/bloc/cart/cart_event.dart';
 import 'package:abc/presentation/resources/color_manager.dart';
 import 'package:abc/presentation/widgets/default_button.dart';
 import 'package:abc/utilities/size_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'product_description.dart';
 import 'product_images.dart';
 import 'top_rounded_container.dart';
@@ -19,7 +16,7 @@ class DetailsScreenContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bloc = BlocProvider.of<CartBloc>(context);
+    // final bloc = BlocProvider.of<CartBloc>(context);
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -37,10 +34,10 @@ class DetailsScreenContent extends StatelessWidget {
                       backgroundColor: ColorManager.primaryColor,
                       foregroundColor: Colors.white,
                       onPressed: () {
-                        bloc.add(AddProductToCartEvent(
-                            cartItem: CartItem(
-                                product: product,
-                                quantity: Random().nextInt(10))));
+                        // bloc.add(AddProductToCartEvent(
+                        //     cartItem: CartItem(
+                        //         product: product,
+                        //         quantity: Random().nextInt(10))));
                       },
                     ),
                   ),

@@ -1,19 +1,13 @@
-import 'package:abc/presentation/product_details/product_details_screen.dart';
-import 'package:abc/presentation/resources/styles_manager.dart';
-import 'package:abc/presentation/search/components/item_not_found.dart';
 import 'package:abc/presentation/search/components/search_app_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:abc/Data/models/product.dart';
-import 'package:abc/presentation/bloc/search/search_event.dart';
-import 'package:abc/presentation/bloc/search/search_state.dart';
-
-import 'components/item_card.dart';
+// import 'package:abc/presentation/bloc/search/search_event.dart';
+// import 'package:abc/presentation/bloc/search/search_state.dart';
 
 class ProductSearchDelegate extends CustomSearchDelegate<Product> {
-  final Bloc<SearchEvent, SearchState> productBloc;
+  // final Bloc<SearchEvent, SearchState> productBloc;
 
-  ProductSearchDelegate({required this.productBloc});
+  // ProductSearchDelegate({required this.productBloc});
 
   // Widget to display after the search query in the AppBar
   @override
@@ -43,62 +37,65 @@ class ProductSearchDelegate extends CustomSearchDelegate<Product> {
   @override
   Widget buildSuggestions(BuildContext context) {
     return SafeArea(
-      child: BlocBuilder(
-        bloc: productBloc,
-        builder: (BuildContext context, SearchState state) {
-          if (state is SearchLoadingState) {
-            return const Align(
-                alignment: Alignment.topCenter,
-                child: CircularProgressIndicator());
-          }
+        // child: BlocBuilder(
+        //   bloc: productBloc,
+        //   builder: (BuildContext context, SearchState state) {
+        //     if (state is SearchLoadingState) {
+        //       return const Align(
+        //           alignment: Alignment.topCenter,
+        //           child: CircularProgressIndicator());
+        //     }
 
-          if (state is SearchSuccessFetchDataState) {
-            if (state.products.isEmpty) {
-              return const ItemNotFound();
-            } else {
-              return Center(
-                  child: Column(
-                children: [
-                  Text("Found  ${state.products.length} results",
-                      textAlign: TextAlign.center,
-                      style: textStyle.copyWith(fontSize: 28)),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  Expanded(
-                    child: SingleChildScrollView(
-                      child: Wrap(
-                        spacing: 15,
-                        children: List.generate(
-                          state.products.length,
-                          (index) {
-                            return ItemCard(
-                                image: state.products[index].image,
-                                price: "From ${state.products[index].price}",
-                                title: state.products[index].title,
-                                evenItem: (index % 2 == 0) ? true : false,
-                                onTap: () => Navigator.pushNamed(
-                                    context, ProductDetailsScreen.routeName,
-                                    arguments: state.products[index]));
-                          },
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ));
-            }
-          }
+        //     if (state is SearchSuccessFetchDataState) {
+        //       if (state.products.isEmpty) {
+        //         return const ItemNotFound();
+        //       } else {
+        //         return Center(
+        //             child: Column(
+        //           children: [
+        //             Text("Found  ${state.products.length} results",
+        //                 textAlign: TextAlign.center,
+        //                 style: textStyle.copyWith(fontSize: 28)),
+        //             const SizedBox(
+        //               height: 15,
+        //             ),
+        //             Expanded(
+        //               child: SingleChildScrollView(
+        //                 child: Wrap(
+        //                   spacing: 15,
+        //                   children: List.generate(
+        //                     state.products.length,
+        //                     (index) {
+        //                       return ItemCard(
+        //                           image: state.products[index].image,
+        //                           price: "From ${state.products[index].price}",
+        //                           title: state.products[index].title,
+        //                           evenItem: (index % 2 == 0) ? true : false,
+        //                           onTap: () => Navigator.pushNamed(
+        //                               context, ProductDetailsScreen.routeName,
+        //                               arguments: state.products[index]));
+        //                     },
+        //                   ),
+        //                 ),
+        //               ),
+        //             ),
+        //           ],
+        //         ));
+        //       }
+        //     }
 
-          if (state is SearchErrorFetchDataState) {
-            return Center(
-              child: Text(state.errorMessage),
-            );
-          }
-          return Container();
-        },
-      ),
-    );
+        //     if (state is SearchErrorFetchDataState) {
+        //       return Center(
+        child:
+            // Text(state.errorMessage),
+            //       );
+            //     }
+            //     return
+            Container()
+        // ;
+        //   },
+        // ),
+        );
   }
 }
 

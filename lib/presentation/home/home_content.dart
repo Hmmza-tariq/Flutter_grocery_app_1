@@ -1,16 +1,17 @@
 import 'package:abc/presentation/home/components/categories_view.dart';
-import 'package:abc/presentation/home/components/popular_product.dart';
+import 'package:abc/presentation/home/components/special_product.dart';
 import 'package:abc/presentation/home/components/see_all_view.dart';
 import 'package:abc/presentation/resources/enums.dart';
+import 'package:abc/presentation/resources/values_manager.dart';
 import 'package:abc/presentation/widgets/custom_bottom_navbar.dart';
+import 'package:abc/presentation/widgets/custom_button.dart';
 import 'package:abc/presentation/widgets/location.dart';
 import 'package:abc/presentation/resources/assets_manager.dart';
 import 'package:abc/presentation/resources/color_manager.dart';
 import 'package:abc/presentation/widgets/search_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'components/categories.dart';
-import 'components/special_offers.dart';
+import 'components/recipes.dart';
 import 'components/text_banner.dart';
 
 class HomeContent extends StatefulWidget {
@@ -111,12 +112,21 @@ class _HomeContentState extends State<HomeContent> {
             const SizedBox(
               height: 32,
             ),
-            const Categories(),
-            // Special Offers component
-            const SpecialOffers(),
-            // Popular products component
-            const PopularProducts(),
-
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: AppPadding.p60),
+              child: CustomButton(
+                title: 'Customize Deal',
+                onPressed: () {},
+                foregroundColor: ColorManager.white,
+                backgroundColor: ColorManager.primaryColor,
+              ),
+            ),
+            // const Categories(),
+            const SizedBox(
+              height: 32,
+            ),
+            const SpecialProducts(),
+            Recipes(),
             const CustomButtomNavBar(selectedMenu: MenuState.home),
           ],
         ));

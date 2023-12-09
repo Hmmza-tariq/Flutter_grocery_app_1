@@ -1,5 +1,6 @@
 import 'package:abc/presentation/product_details/product_details_screen.dart';
 import 'package:abc/presentation/resources/color_manager.dart';
+import 'package:abc/presentation/resources/styles_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:abc/data/models/product.dart';
 import 'package:abc/Utilities/size_config.dart';
@@ -59,13 +60,18 @@ class _ProductCardState extends State<ProductCard> {
             ),
             // Row widgets that contains product's price and favorite state
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              Text(
-                "\$${widget.product.price}",
-                style: TextStyle(
-                  fontSize: SizeConfig.getProportionateScreenWidth(18),
-                  fontWeight: FontWeight.w600,
-                  color: ColorManager.primaryColor,
-                ),
+              Column(
+                children: [
+                  Text("Rs ${widget.product.price + 20}",
+                      style: textStyle.copyWith(
+                          decoration: TextDecoration.lineThrough,
+                          decorationThickness: 3,
+                          decorationColor: Colors.red)),
+                  Text(
+                    "Rs ${widget.product.price}",
+                    style: textStyle,
+                  ),
+                ],
               ),
               InkWell(
                 borderRadius: BorderRadius.circular(50),

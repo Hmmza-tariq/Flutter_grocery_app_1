@@ -4,7 +4,7 @@ class SizeConfig {
   // Object represent MediaQuery data of specific context
   static late MediaQueryData _mediaQueryData;
   // static variable represents screen's width
-  static late double screenWidth;
+  static double screenWidth = 360;
   // static variable represents screen's height
   static late double screenHeight;
   // static variable represents screen's default size

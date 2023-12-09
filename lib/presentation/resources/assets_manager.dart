@@ -10,6 +10,9 @@ class ImageAssets {
   static const String vegetables = "$IMAGE_PATH/vegetables.png";
   static const String diary = "$IMAGE_PATH/diary.png";
   static const String meat = "$IMAGE_PATH/meat.png";
+  static const String recipe_1 = "$IMAGE_PATH/r2.jpeg";
+  static const String recipe_2 = "$IMAGE_PATH/r2.jpeg";
+  static const String recipe_3 = "$IMAGE_PATH/r2.jpeg";
   static const String google = "$ICON_PATH/google.svg";
   static const String facebook = "$ICON_PATH/facebook.svg";
   static const String twitter = "$ICON_PATH/twitter.svg";

@@ -1,10 +1,9 @@
-import 'package:abc/presentation/bloc/cart/cart_bloc.dart';
-import 'package:abc/presentation/bloc/cart/cart_event.dart';
+// import 'package:abc/presentation/bloc/cart/cart_bloc.dart';
+// import 'package:abc/presentation/bloc/cart/cart_event.dart';
 import 'package:abc/presentation/home/home_screen.dart';
 import 'package:abc/presentation/resources/color_manager.dart';
 import 'package:abc/presentation/resources/enums.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'custom_page_transition.dart';
 
@@ -69,8 +68,8 @@ class CustomButtomNavBar extends StatelessWidget {
                       ? ColorManager.primaryColor
                       : ColorManager.inActiveIconColor),
               onPressed: () {
-                BlocProvider.of<CartBloc>(context)
-                    .add(const FetchCartProductsEvent());
+                // BlocProvider.of<CartBloc>(context)
+                //     .add(const FetchCartProductsEvent());
                 // Navigator.push(
                 //     context,
                 //     CustomScaleTransition(

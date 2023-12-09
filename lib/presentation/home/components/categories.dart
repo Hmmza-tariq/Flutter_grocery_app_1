@@ -1,10 +1,9 @@
 import 'package:abc/presentation/resources/color_manager.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:abc/Data/models/category.dart';
 
-import 'package:abc/presentation/bloc/search/search_bloc.dart';
-import 'package:abc/presentation/bloc/search/search_event.dart';
+// import 'package:abc/presentation/bloc/search/search_bloc.dart';
 
 class Categories extends StatefulWidget {
   const Categories({Key? key}) : super(key: key);
@@ -14,12 +13,12 @@ class Categories extends StatefulWidget {
 }
 
 class _CategoriesState extends State<Categories> {
-  late final bloc;
+  // late final bloc;
   @override
   void initState() {
     super.initState();
-    bloc = BlocProvider.of<SearchBloc>(context);
-    bloc.add(const FetchAllProductEvent());
+    // bloc = BlocProvider.of<SearchBloc>(context);
+    // bloc.add(const FetchAllProductEvent());
   }
 
   static const TextStyle selectedItemStyle = TextStyle(
@@ -29,7 +28,7 @@ class _CategoriesState extends State<Categories> {
   static const TextStyle unSelectedItemStyle = TextStyle(
     color: ColorManager.secondaryColor,
   );
-  int _selectedIndex = 0;
+  final int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -62,11 +61,11 @@ class _CategoriesState extends State<Categories> {
                   ? selectedItemStyle
                   : unSelectedItemStyle),
           onPressed: () {
-            bloc.add(FetchProductByCategoryEvent(
-                queryString: categories[index]["title"]));
-            setState(() {
-              _selectedIndex = index;
-            });
+            // bloc.add(FetchProductByCategoryEvent(
+            //     queryString: categories[index]["title"]));
+            // setState(() {
+            //   _selectedIndex = index;
+            // });
           }),
     );
   }

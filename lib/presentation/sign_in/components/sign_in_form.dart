@@ -1,3 +1,4 @@
+import 'package:abc/database/database_service.dart';
 import 'package:abc/presentation/forget_password/forgot_password_screen.dart';
 import 'package:abc/presentation/home/home_screen.dart';
 import 'package:abc/presentation/resources/assets_manager.dart';
@@ -10,6 +11,7 @@ import 'package:abc/presentation/sign_up/sign_up_screen.dart';
 import 'package:abc/presentation/widgets/custom_button.dart';
 import 'package:abc/presentation/widgets/custom_page_transition.dart';
 import 'package:abc/presentation/widgets/social_card.dart';
+import 'package:abc/utilities/keyboard_util.dart';
 import 'package:flutter/material.dart';
 
 class SignInForm extends StatefulWidget {
@@ -118,34 +120,37 @@ class _SignInFormState extends State<SignInForm> {
                   onPressed: () async {
                     //
                     //
-                    Navigator.push(
-                        context,
-                        CustomScaleTransition(
-                            nextPageUrl: HomeScreen.routeName,
-                            nextPage: const HomeScreen()));
+                    // Navigator.push(
+                    //     context,
+                    //     CustomScaleTransition(
+                    //         nextPageUrl: HomeScreen.routeName,
+                    //         nextPage: const HomeScreen()));
                     //
                     //
 
-                    // if (_formKey.currentState!.validate()) {
-                    //   _formKey.currentState!.save();
-                    //   // Check user Identity
-                    //   bool result = await _sqliteDbHelper.checkIdentity(
-                    //       email: email, password: password);
-                    //   if (result) {
-                    //     KeyboardUtil.hideKeyboard(context);
-                    //     Navigator.push(
-                    //         context,
-                    //         CustomScaleTransition(
-                    //             nextPageUrl: HomeScreen.routeName,
-                    //             nextPage: const HomeScreen()));
-                    //   } else {
-                    //     ScaffoldMessenger.of(context)
-                    //         .showSnackBar(const SnackBar(
-                    //       content: Text("Please check your email or password"),
-                    //       backgroundColor: Colors.black38,
-                    //     ));
-                    //   }
-                    // }
+                    if (_formKey.currentState!.validate()) {
+                      _formKey.currentState!.save();
+                      // Check user Identity
+                      bool result = await SqliteDbHelper()
+                          .checkIdentity(email: email, password: password);
+                      if (result) {
+                        // ignore: use_build_context_synchronously
+                        KeyboardUtil.hideKeyboard(context);
+                        // ignore: use_build_context_synchronously
+                        Navigator.push(
+                            context,
+                            CustomScaleTransition(
+                                nextPageUrl: HomeScreen.routeName,
+                                nextPage: const HomeScreen()));
+                      } else {
+                        // ignore: use_build_context_synchronously
+                        ScaffoldMessenger.of(context)
+                            .showSnackBar(const SnackBar(
+                          content: Text("Please check your email or password"),
+                          backgroundColor: Colors.black38,
+                        ));
+                      }
+                    }
                   },
                 ),
                 SizedBox(
@@ -167,11 +172,18 @@ class _SignInFormState extends State<SignInForm> {
             alignment: Alignment.bottomRight,
             child: Padding(
               padding: const EdgeInsets.only(top: AppPadding.p60),
-              child: Text(
-                AppStrings.skip,
-                style: textStyle.copyWith(
-                    fontSize: FontSize.s18,
-                    decoration: TextDecoration.underline),
+              child: InkWell(
+                onTap: () => Navigator.push(
+                    context,
+                    CustomScaleTransition(
+                        nextPageUrl: HomeScreen.routeName,
+                        nextPage: const HomeScreen())),
+                child: Text(
+                  AppStrings.skip,
+                  style: textStyle.copyWith(
+                      fontSize: FontSize.s18,
+                      decoration: TextDecoration.underline),
+                ),
               ),
             ),
           )
